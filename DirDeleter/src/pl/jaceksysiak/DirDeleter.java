@@ -14,17 +14,21 @@ public class DirDeleter {
 		
 	    Set<File> all = new HashSet<File>();
 	    //getAllFileAndFolder(new File("c://kat1"), all);
-	      getAllFileAndFolder(new File("f://workspace-spring-tutorial___nie _u¿ywane"), all);
+	    //getAllFileAndFolder(new File("f://workspace-spring-tutorial___nie _u¿ywane"), all);
+	    getAllFileAndFolder(new File("f:\\GitHub"), all);
 		
 	    for(File file : all) {
 	    	if(file.exists()) {
 	    	deleteDir(file);
+	    	System.out.println(file);
 	    	}
 	    }
+	    
+	    System.out.println("KONIEC");
 		  
 	}
 	
-	  public static void getAllFileAndFolder(File folder, Set<File> all) {
+	private static void getAllFileAndFolder(File folder, Set<File> all) {
 		    
 		    if (folder.isFile()) {
 		      return;
@@ -50,7 +54,7 @@ public class DirDeleter {
 	
 	
 	
-	public static void deleteDir(File dir) throws IOException {
+	private static void deleteDir(File dir) throws IOException {
 		if (!dir.isDirectory()) {
 			throw new IOException("Not a directory " + dir);
 		}
